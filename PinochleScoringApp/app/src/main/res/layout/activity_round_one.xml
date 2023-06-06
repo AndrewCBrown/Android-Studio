@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RoundOneActivity">
+
+    <Button
+        android:id="@+id/overview_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="overview_button_handler"
+        android:text="@string/overview"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/round_1_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/selected_button"
+        android:text="@string/round_1"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toStartOf="@+id/round_2_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overview_button" />
+
+    <Button
+        android:id="@+id/round_2_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="round_2_button_handler"
+        android:text="@string/round_2"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toStartOf="@+id/round_3_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_1_button"
+        app:layout_constraintTop_toBottomOf="@+id/overview_button" />
+
+    <Button
+        android:id="@+id/round_3_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="round_3_button_handler"
+        android:text="@string/round_3"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toStartOf="@+id/round_4_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_2_button"
+        app:layout_constraintTop_toBottomOf="@+id/overview_button" />
+
+    <Button
+        android:id="@+id/round_4_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="round_4_button_handler"
+        android:text="@string/round_4"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_3_button"
+        app:layout_constraintTop_toBottomOf="@+id/overview_button" />
+
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_button" />
+
+    <Button
+        android:id="@+id/team_1_button"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:onClick="team_1_button_handler"
+        android:text="@string/team_1_default"
+        android:textSize="@dimen/small_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <TextView
+        android:id="@+id/bid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/bid"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toStartOf="@+id/bid_editText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/team_1_button"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <EditText
+        android:id="@+id/bid_editText"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bid"
+        app:layout_constraintEnd_toStartOf="@+id/divider_1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/divider_1"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <Button
+        android:id="@+id/team_2_button"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:onClick="team_2_button_handler"
+        android:text="@string/team_2_default"
+        android:textSize="@dimen/small_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <ImageView
+        android:id="@+id/spade_image"
+        android:layout_width="80dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="@dimen/margin_large"
+        android:background="@color/unselected_image"
+        android:contentDescription="@string/spade"
+        android:onClick="spade_image_handler"
+        app:layout_constraintEnd_toStartOf="@+id/heart_image"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bid"
+        app:srcCompat="@drawable/spade" />
+
+    <ImageView
+        android:id="@+id/heart_image"
+        android:layout_width="80dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="@dimen/margin_large"
+        android:background="@color/unselected_image"
+        android:contentDescription="@string/heart"
+        android:onClick="heart_image_handler"
+        app:layout_constraintEnd_toStartOf="@+id/club_image"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/spade_image"
+        app:layout_constraintTop_toBottomOf="@+id/bid"
+        app:srcCompat="@drawable/heart" />
+
+    <ImageView
+        android:id="@+id/club_image"
+        android:layout_width="80dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="@dimen/margin_large"
+        android:background="@color/unselected_image"
+        android:contentDescription="@string/club"
+        android:onClick="club_image_handler"
+        app:layout_constraintEnd_toStartOf="@+id/diamond_image"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/heart_image"
+        app:layout_constraintTop_toBottomOf="@+id/bid"
+        app:srcCompat="@drawable/club" />
+
+    <ImageView
+        android:id="@+id/diamond_image"
+        android:layout_width="80dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="@dimen/margin_large"
+        android:background="@color/unselected_image"
+        android:contentDescription="@string/diamond"
+        android:onClick="diamond_image_handler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/club_image"
+        app:layout_constraintTop_toBottomOf="@+id/bid"
+        app:srcCompat="@drawable/diamond" />
+
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spade_image" />
+
+    <TextView
+        android:id="@+id/meld_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:text="@string/meld"
+        android:textSize="@dimen/medium_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+
+    <TextView
+        android:id="@+id/team_1_meld_textView"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/team_1_default"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meld_textView" />
+
+    <EditText
+        android:id="@+id/team_1_meld_editText"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/team_1_meld_textView"
+        app:layout_constraintStart_toEndOf="@+id/team_1_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/meld_textView" />
+
+    <TextView
+        android:id="@+id/team_2_meld_textView"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:text="@string/team_2_default"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toStartOf="@+id/team_2_meld_editText"
+        app:layout_constraintTop_toBottomOf="@+id/meld_textView" />
+
+    <EditText
+        android:id="@+id/team_2_meld_editText"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/team_2_meld_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meld_textView" />
+
+    <View
+        android:id="@+id/divider_3"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_1_meld_textView" />
+
+    <TextView
+        android:id="@+id/tricks_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:text="@string/tricks"
+        android:textSize="@dimen/medium_text"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_3" />
+
+    <Button
+        android:id="@+id/team_1_took_all_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:onClick="team_1_took_all_button_handler"
+        android:textSize="@dimen/small_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tricks_textView" />
+
+    <Button
+        android:id="@+id/team_2_took_all_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:onClick="team_2_took_all_button_handler"
+        android:textSize="@dimen/small_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tricks_textView" />
+
+    <TextView
+        android:id="@+id/team_1_tricks_textView"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/team_1_default"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_1_took_all_button" />
+
+    <EditText
+        android:id="@+id/team_1_tricks_editText"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/team_1_tricks_textView"
+        app:layout_constraintStart_toEndOf="@+id/team_1_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/team_1_took_all_button" />
+
+    <TextView
+        android:id="@+id/team_2_tricks_textView"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:text="@string/team_2_default"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toStartOf="@+id/team_2_tricks_editText"
+        app:layout_constraintTop_toBottomOf="@+id/team_1_took_all_button" />
+
+    <EditText
+        android:id="@+id/team_2_tricks_editText"
+        android:layout_width="72dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintBaseline_toBaselineOf="@+id/team_2_tricks_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_1_took_all_button" />
+
+    <View
+        android:id="@+id/divider_4"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_1_tricks_textView" />
+
+    <Button
+        android:id="@+id/done_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:onClick="done_button_handler"
+        android:text="@string/done"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_4" />
+
+    <TextView
+        android:id="@+id/team_1_round_score_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:gravity="center"
+        android:text="zero"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/team_2_round_score_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/team_2_round_score_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:gravity="center"
+        android:text="zero"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/team_1_round_score_textView" />
+
+    <TextView
+        android:id="@+id/round_score_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="@string/round_1_scores"
+        android:textSize="@dimen/medium_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/team_1_round_score_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/divider_5"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintBottom_toTopOf="@+id/round_score_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

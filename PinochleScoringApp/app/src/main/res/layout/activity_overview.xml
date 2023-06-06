@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OverviewActivity">
+
+    <Button
+        android:id="@+id/overview_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/overview"
+        android:textSize="@dimen/large_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/round_1_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="round_1_button_handler"
+        android:text="@string/round_1"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toStartOf="@+id/round_2_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overview_button" />
+
+    <Button
+        android:id="@+id/round_2_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="round_2_button_handler"
+        android:text="@string/round_2"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toStartOf="@+id/round_3_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_1_button"
+        app:layout_constraintTop_toBottomOf="@+id/overview_button" />
+
+    <Button
+        android:id="@+id/round_3_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="round_3_button_handler"
+        android:text="@string/round_3"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toStartOf="@+id/round_4_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_2_button"
+        app:layout_constraintTop_toBottomOf="@+id/overview_button" />
+
+    <Button
+        android:id="@+id/round_4_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="round_4_button_handler"
+        android:text="@string/round_4"
+        android:textSize="@dimen/medium_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_3_button"
+        app:layout_constraintTop_toBottomOf="@+id/overview_button" />
+
+    <Button
+        android:id="@+id/new_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:gravity="center"
+        android:onClick="new_game_button_handler"
+        android:text="@string/new_game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/divider_1"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_button" />
+
+    <TextView
+        android:id="@+id/team_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/team"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <TextView
+        android:id="@+id/meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/meld"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/team_textView"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <TextView
+        android:id="@+id/tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/tricks"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <TextView
+        android:id="@+id/total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/total"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+    <View
+        android:id="@+id/divider_2"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_textView" />
+
+    <TextView
+        android:id="@+id/round_1_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+
+    <TextView
+        android:id="@+id/round_1_team_1_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/round_1_team_1_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_phrase" />
+
+    <TextView
+        android:id="@+id/round_1_team_1_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_1_team_1_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_1_team_1_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_phrase" />
+
+    <TextView
+        android:id="@+id/round_1_team_1_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_1_team_1_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_1_team_1_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_phrase" />
+
+    <TextView
+        android:id="@+id/round_1_team_1_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_1_team_1_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_phrase" />
+
+    <TextView
+        android:id="@+id/round_1_team_2_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/round_1_team_2_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_1_team_2_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_1_team_2_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_1_team_2_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_1_team_2_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_1_team_2_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_1_team_2_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_1_team_2_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_1_team_2_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_team_1_textView" />
+
+    <View
+        android:id="@+id/divider_3"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_1_team_2_textView" />
+
+
+    //Start Round 2
+
+
+    <TextView
+        android:id="@+id/round_2_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_3" />
+
+    <TextView
+        android:id="@+id/round_2_team_1_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/round_2_team_1_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_phrase" />
+
+    <TextView
+        android:id="@+id/round_2_team_1_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_2_team_1_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_2_team_1_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_phrase" />
+
+    <TextView
+        android:id="@+id/round_2_team_1_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_2_team_1_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_2_team_1_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_phrase" />
+
+    <TextView
+        android:id="@+id/round_2_team_1_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_2_team_1_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_phrase" />
+
+    <TextView
+        android:id="@+id/round_2_team_2_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/round_2_team_2_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_2_team_2_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_2_team_2_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_2_team_2_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_2_team_2_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_2_team_2_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_2_team_2_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_2_team_2_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_2_team_2_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_team_1_textView" />
+
+    <View
+        android:id="@+id/divider_4"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_2_team_2_textView" />
+
+
+    //Start Round 3
+
+
+    <TextView
+        android:id="@+id/round_3_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_4" />
+
+    <TextView
+        android:id="@+id/round_3_team_1_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/round_3_team_1_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_phrase" />
+
+    <TextView
+        android:id="@+id/round_3_team_1_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_3_team_1_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_3_team_1_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_phrase" />
+
+    <TextView
+        android:id="@+id/round_3_team_1_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_3_team_1_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_3_team_1_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_phrase" />
+
+    <TextView
+        android:id="@+id/round_3_team_1_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_3_team_1_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_phrase" />
+
+    <TextView
+        android:id="@+id/round_3_team_2_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/round_3_team_2_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_3_team_2_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_3_team_2_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_3_team_2_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_3_team_2_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_3_team_2_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_3_team_2_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_3_team_2_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_3_team_2_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_team_1_textView" />
+
+    <View
+        android:id="@+id/divider_5"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_3_team_2_textView" />
+
+
+    //Start Round 4
+
+
+    <TextView
+        android:id="@+id/round_4_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_5" />
+
+    <TextView
+        android:id="@+id/round_4_team_1_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/round_4_team_1_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_phrase" />
+
+    <TextView
+        android:id="@+id/round_4_team_1_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_4_team_1_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_4_team_1_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_phrase" />
+
+    <TextView
+        android:id="@+id/round_4_team_1_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_4_team_1_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_4_team_1_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_phrase" />
+
+    <TextView
+        android:id="@+id/round_4_team_1_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_4_team_1_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_phrase" />
+
+    <TextView
+        android:id="@+id/round_4_team_2_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/round_4_team_2_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_4_team_2_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_4_team_2_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_4_team_2_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_4_team_2_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toStartOf="@+id/round_4_team_2_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_4_team_2_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_team_1_textView" />
+
+    <TextView
+        android:id="@+id/round_4_team_2_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/round_4_team_2_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_team_1_textView" />
+
+    <View
+        android:id="@+id/divider_6"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round_4_team_2_textView" />
+
+
+    //Total Scores
+
+
+    <TextView
+        android:id="@+id/total_phrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/total_scores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider_6" />
+
+    <TextView
+        android:id="@+id/total_team_1_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/total_team_1_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_phrase" />
+
+    <TextView
+        android:id="@+id/total_team_1_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/space"
+        app:layout_constraintEnd_toStartOf="@+id/total_team_1_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/total_team_1_textView"
+        app:layout_constraintTop_toBottomOf="@+id/total_phrase" />
+
+    <TextView
+        android:id="@+id/total_team_1_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/space"
+        app:layout_constraintEnd_toStartOf="@+id/total_team_1_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/total_team_1_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/total_phrase" />
+
+    <TextView
+        android:id="@+id/total_team_1_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/total_team_1_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/total_phrase" />
+
+    <TextView
+        android:id="@+id/total_team_2_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/total_team_2_meld_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_team_1_textView" />
+
+    <TextView
+        android:id="@+id/total_team_2_meld_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/space"
+        app:layout_constraintEnd_toStartOf="@+id/total_team_2_tricks_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/total_team_2_textView"
+        app:layout_constraintTop_toBottomOf="@+id/total_team_1_textView" />
+
+    <TextView
+        android:id="@+id/total_team_2_tricks_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/space"
+        app:layout_constraintEnd_toStartOf="@+id/total_team_2_total_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/total_team_2_meld_textView"
+        app:layout_constraintTop_toBottomOf="@+id/total_team_1_textView" />
+
+    <TextView
+        android:id="@+id/total_team_2_total_textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:gravity="center"
+        android:text="@string/zero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/total_team_2_tricks_textView"
+        app:layout_constraintTop_toBottomOf="@+id/total_team_1_textView" />
+
+    <View
+        android:id="@+id/divider_7"
+        android:layout_width="409dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@color/blue_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total_team_2_textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

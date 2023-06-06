@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Pinochle Scoring App</string>
+    <string name="welcome_message">Welcome to the Pinochle scoring app!</string>
+    <string name="zero">0</string>
+    <string name="space"> </string>
+    <string name="play_button">Play</string>
+    <string name="info_button">Info</string>
+    <string name="team_1">Team 1:</string>
+    <string name="team_name_hint">Enter your team name</string>
+    <string name="team_2">Team 2:</string>
+    <string name="start_button">Start</string>
+    <string name="overview">Overview</string>
+    <string name="round_4">Round 4</string>
+    <string name="round_3">Round 3</string>
+    <string name="round_2">Round 2</string>
+    <string name="round_1">Round 1</string>
+    <string name="new_game">New Game</string>
+    <string name="team">Team</string>
+    <string name="meld">Meld</string>
+    <string name="tricks">Tricks</string>
+    <string name="total">Total</string>
+    <string name="unknown">\???</string>
+    <string name="total_scores">Total Scores</string>
+    <string name="bid">Bid:</string>
+    <string name="team_2_default">Team 2</string>
+    <string name="team_1_default">Team 1</string>
+    <string name="spade">spade</string>
+    <string name="heart">heart</string>
+    <string name="club">club</string>
+    <string name="diamond">diamond</string>
+    <string name="round_1_scores">Round 1 Scores</string>
+    <string name="round_2_scores">Round 2 Scores</string>
+    <string name="round_3_scores">Round 3 Scores</string>
+    <string name="round_4_scores">Round 4 Scores</string>
+    <string name="done">Done</string>
+    <string name="info_text">This app is designed to help pinochle players keep score in an easy way with just their phones!
+        \n\n
+        The app will begin by asking you to enter names for the two teams that are playing, once you have done that you press start and it takes you to the overview screen. This screen shows the scores from each of the four rounds of play, as well as who took the bid and what suit they called. It also has the option to start over with a new game by pressing \"new game\". Be careful though! Pressing this button will erase all your progress on the current game.
+        \n\n
+        Under the overview page there are 4 pages, one for each round of play. These 4 pages are where you will enter the information for each of the 4 rounds. When the round is finished, you can press the \"done\" button, and the app will add the score up for you. You can go back to overview to see the total scores, or you can just move onto the next round. After the rounds are recorded you can go back to that screen to see all the information you entered.
+        \n\n
+        A few more words of caution before you get started! Sometimes, if you leave a round page without pressing \"done\" some of the items you entered will not be saved. It is a good practice to always press \"done\" before you leave the page you are on. Even if not every field has been entered, pressing \"done\" will save all the values you\'ve entered so far. Also note that when you press the button for one team taking all the tricks, it will not count the other teams meld. If you accidentally press that button, you can make the other teams meld count again by giving them some points, pressing \"done\", and then you can re-enter whatever value you need, even if it is 0.</string>
+</resources>
